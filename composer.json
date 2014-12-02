@@ -1,5 +1,5 @@
 {
-    "name": "adenfraser/blade-alternate",
+    "name": "AdenFraser/blade-alternate",
     "description": "",
     "authors": [
         {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "adenfraser\\BladeAlternate": "src/"
+            "AdenFraser\\BladeAlternate": "src/"
         }
     },
     "minimum-stability": "dev"

@@ -1,4 +1,4 @@
-<?php namespace adenfraser\BladeAlternate;
+<?php namespace AdenFraser\BladeAlternate;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -24,23 +24,21 @@ class BladeAlternateServiceProvider extends ServiceProvider {
 		$this->registerBladeExtension();
 	}
 
-	public function registerAlternate() {
-
-		$this->app->singleton('blade.alternator', 'adenfraser\BladeAlternate\BladeAlternate');
-
+	public function registerAlternate()
+	{
+		$this->app->singleton('blade.alternate', 'AdenFraser\BladeAlternate\BladeAlternate');
 	}
 
-	public function registerBladeExtension() {
-
+	public function registerBladeExtension()
+	{
 		$compiler = $this->app['view.engine.resolver']->resolve('blade')->getCompiler();
 		$compiler->extend(function($value, $blade){
 
 			$pattern = $blade->createMatcher('alternate');
-			return preg_replace($pattern, "$1<?php echo app('blade.alternator')->choose$2; ?>", $value);
+			return preg_replace($pattern, "$1<?php echo app('blade.alternate')->choose$2; ?>", $value);
 		});
 
 	}
-
 
 	/**
 	 * Get the services provided by the provider.
@@ -49,7 +47,7 @@ class BladeAlternateServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('blade.alternator');
+		return array('blade.alternate');
 	}
 
 }

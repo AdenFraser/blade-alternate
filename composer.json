@@ -1,0 +1,20 @@
+{
+    "name": "adenfraser/blade-alternate",
+    "description": "",
+    "authors": [
+        {
+            "name": "AdenFraser",
+            "email": "aden@fraserjilani.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "adenfraser\\BladeAlternate": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
